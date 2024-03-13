@@ -1,0 +1,7 @@
+<h1>Form for editing an existing post</h1>
+<%= form_with model: @post do |post| %> 
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= form.label :body %>
+    <%= form.text_area :body, size: "70x5" %>
+<% end %>
