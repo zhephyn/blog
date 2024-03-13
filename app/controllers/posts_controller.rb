@@ -7,6 +7,10 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
 
+    def edit
+        ## Read more about the line below
+        render :edit
+    end
     def new
         @post = Post.new
     end
