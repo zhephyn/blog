@@ -1,1 +1,12 @@
-this is where all posts saved in our database are displayed
+<h1> List of all articles</h1>
+<%@posts.each do |post|%>
+    <div>
+        <h2>Title:</h2>
+        <%= post.title%>
+    </div>
+
+    <div>
+        <h2>Body:</h2>
+        <%= post.body %>
+    </div>
+<% end %>
