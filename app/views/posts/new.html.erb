@@ -1,1 +1,9 @@
-this is a form page for creating a new post
+<h1>Create a new post</h1>
+
+<%= form_with model: @post do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= form.label :body %>
+    <%= form.text_area :body, size: "70x5" %>
+    <%= form.submit "Create Post" %>
+<% end %>
