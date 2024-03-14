@@ -17,11 +17,9 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        if @post.save
-            ##render the show page to see the created post
-        else
-            ##render a  new form to create a new post again
-        end
+        @post.save
+        ##add an if else statement to check if the created post is saved and redirect to post or when its 
+        ##not saved and render the form again
     end
 
     def update

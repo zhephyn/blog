@@ -1,18 +1,24 @@
-<h1> List of all articles</h1>
-<%@posts.each do |post|%>
+<div>
     <div>
-        <h2>Title:</h2>
-        <%= post.title%>
+        <h1> List of all articles </h1>
     </div>
 
     <div>
-        <h2>Body:</h2>
-        <%= post.body %>
+        <% @posts.each do |post| %>
+        <div>
+            <h2>Title:</h2>
+            <%= post.title %>
+        </div>
+        <div>
+            <h2>Body:</h2>
+            <%= post.body %>
+        </div>
+        <% ## button for showing post %>
+        <%= button_to "Show Post",post_path %>
+        <% end %>
     </div>
 
-    <% ## button for showing post %>
-    <%= button_to "Show Post",post_path %>
-<% end %>
-
-<% ## button for creating a new post %>
-<%= button_to "Create New Post", new_post_path %>
+    <div>
+        <%= button_to "Create New Post", posts_new_path, method: :get %>
+    </div>
+</div>
