@@ -7,12 +7,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
    root "posts#index"
-    get "/posts" to: "posts#index"
-    get "/posts/new" to: "posts#new"
-    get "/posts/:id" to: "posts#show"
-    get "/posts/:id/edit" to: "posts#edit"
-    put "/posts/:id"  to: "posts#update"
-    delete "/posts/:id" to: "posts#destroy"
+    get "/posts" , to: "posts#index"
+    get "/posts/new", to: "posts#new"
+    get "/posts/:id", to: "posts#show"
+    get "/posts/:id/edit", to: "posts#edit"
+    put "/posts/:id",  to: "posts#update"
+    delete "/posts/:id", to: "posts#destroy"
   
   # TODO: add routes for the Posts model
 end
