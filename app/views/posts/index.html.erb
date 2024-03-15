@@ -1,24 +1,11 @@
 <div>
-    <div>
-        <h1> List of all articles </h1>
-    </div>
-
-    <div>
+        <h1><strong> List of all articles</strong></h1>
         <% @posts.each do |post| %>
-        <div>
-            <h2>Title:</h2>
+        <div> <p>Post:</p><%= post.id%> </div>
+            <p><strong>Title:</strong></p>
             <%= post.title %>
-        </div>
-        <div>
-            <h2>Body:</h2>
+            <p><strong>Body:<strong></p>
             <%= post.body %>
-        </div>
-        <% ## button for showing post %>
-        <%= button_to "Show Post",post_path %>
         <% end %>
-    </div>
-
-    <div>
         <%= button_to "Create New Post", posts_new_path, method: :get %>
-    </div>
 </div>

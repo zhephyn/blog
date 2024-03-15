@@ -7,7 +7,7 @@
     <%= @post.body%>
 
     <% ## buttons for delete post and edit post %>
-    <%= button_to "Edit Post", edit_post_path(:id) %>
+    <%= button_to "Edit Post", edit_post_path(@post) %>
     <%= button_to "Delete Post", post_path(:id) %>
     <% ## button at the bottom for navigating back to the index page %>
     <%= button_to "Return to Home page", posts_path %>
