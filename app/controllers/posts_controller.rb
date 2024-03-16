@@ -22,8 +22,6 @@ class PostsController < ApplicationController
          else
             render :new
          end
-        ##add an if else statement to check if the created post is saved and redirect to post or when its 
-        ##not saved and render the form again
     end
 
     def update
