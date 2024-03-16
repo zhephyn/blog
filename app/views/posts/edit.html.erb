@@ -1,7 +1,27 @@
-<h1>Form for editing an existing post</h1>
-<%= form_with model: @post do |post| %> 
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-    <%= form.label :body %>
-    <%= form.text_area :body, size: "70x5" %>
-<% end %>
+<div>
+    <div>
+        <h1>Edit existing post</h1>
+    </div>
+
+    <div>
+        <%= form_with (model: @post, url: edit_post_path(@post), method: :patch) do |form| %>
+        <div>
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+        </div>
+    
+        <div>
+            <%= form.label :body %>
+            <%= form.text_area :body, size: "70x5" %>
+        </div>
+    
+        <div>
+            <%= form.submit %>
+        </div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= button_to "Back to Home Page", posts_path, method: :get %>
+    </div>
+</div>

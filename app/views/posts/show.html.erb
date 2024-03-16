@@ -1,14 +1,13 @@
-<h1>Individual post content</h1>
-<div>
-    <p>Title:</p>
-    <%= @post.title %>
-
-    <p>Body:</p>
-    <%= @post.body%>
-
-    <% ## buttons for delete post and edit post %>
-    <%= button_to "Edit Post", edit_post_path(@post) %>
-    <%= button_to "Delete Post", post_path(:id) %>
-    <% ## button at the bottom for navigating back to the index page %>
-    <%= button_to "Return to Home page", posts_path %>
-</div>
+<div><h1><strong>Individual post content<strong></h1></div>
+    <div>
+        <p><strong>Title:</strong></p>
+        <%= @post.title %>
+    </div>
+    
+    <div>
+        <p><strong>Body:</strong></p>
+        <%= @post.body%>
+    </div>
+<%= button_to "Edit Post", edit_post_path(@post), method: :get%>
+<%= button_to "Delete Post", post_path(@post), method: :delete%>
+<%= button_to "Back to home page", posts_path ,method: :get%>
