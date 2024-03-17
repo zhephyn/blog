@@ -1,8 +1,13 @@
 <div>
+    <% if @post.errors.any?%>
+        <%= pluralize(@post.errors.count, "error")%>
+        <% @post.errors.full_messages.each do |message|%>
+            <%= message %>
+        <% end %>
+    <% end %>
     <div>
         <h1>Create a new post</h1>
     </div>
-
     <div>
         <%= form_with model: @post do |form| %>
         <div>
@@ -14,7 +19,10 @@
             <%= form.label :body %>
             <%= form.text_area :body, size: "70x5" %>
         </div>
-    
+        <div>
+            <%= form.label :image %>
+            <%= form.file_field :image %>
+        </div>
         <div>
             <%= form.submit %>
         </div>

@@ -20,7 +20,7 @@ class PostsController < ApplicationController
         if @post.save
             redirect_to post_path(@post)
          else
-            render :new
+            render "new", format: :html
          end
     end
 
@@ -35,11 +35,13 @@ class PostsController < ApplicationController
 
     def destroy
         @post = Post.find(params[:id])
-        @post.destroy
+        if @post.destroy
+            redirect_to posts_path, alert:  "You successfully deleted the Post"
+        end
     end
 
     private
     def post_params
-        params.require(:post).permit(:title, :body)
+        params.require(:post).permit(:title, :body, :image)
     end
 end
