@@ -14,6 +14,22 @@
             <%= @post.image %>
         <% end %>
     </div>
+
+    <div>
+        <h1>Comments for Post:</h1>
+        <% @post.comments.each do |comment| %>
+            <%= comment.body %>
+        <% end %>
+    </div>
+
+    <div>
+        <h1>Write a comment about this Post:</h1>
+        <% form_with model: @comment do |form| %>
+            <%= form.label :body %>
+            <%= form.text_area :body %>
+            <%= form.submit "Create comment abouyt post" %>
+        <% end %>
+    </div>
 <%= button_to "Edit Post", edit_post_path(@post), method: :get %>
 <%= button_to "Delete Post", post_path(@post), method: :delete %>
 <%= button_to "Back to home page", posts_path ,method: :get %>
