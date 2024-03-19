@@ -11,7 +11,7 @@
     <div>
         <% if @post.image.attached? %>
             <p><strong>Attached Image:</strong></p>
-            <%= @post.image %>
+            <%= image_tag(@post.image) %>
         <% end %>
     </div>
 
@@ -24,10 +24,10 @@
 
     <div>
         <h1>Write a comment about this Post:</h1>
-        <% form_with model: @comment do |form| %>
+        <%= form_with(model: [@post, @comment], url: post_comments_path(@post), method: :post) do |form| %>
             <%= form.label :body %>
             <%= form.text_area :body %>
-            <%= form.submit "Create comment abouyt post" %>
+            <%= form.submit "Create comment about this post" %>
         <% end %>
     </div>
 <%= button_to "Edit Post", edit_post_path(@post), method: :get %>
