@@ -24,6 +24,9 @@
             <%= form.file_field :image %>
         </div>
         <div>
+            <%= form.collection_select(:post,:category_id, Category.all, :id, prompt: true)%>
+        </div>
+        <div>
             <%= form.submit %>
         </div>
         <% end %>
