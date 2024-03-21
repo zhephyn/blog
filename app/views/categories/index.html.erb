@@ -1,5 +1,11 @@
+<div>
 <h1>List of all Categories</h1>
 <% @categories.each do |category| %>
-    <%= category.id%>
-    <%= category.title%>
+    <div><%= category.id%></div>
+    <div><strong><%= category.title%></strong></div>
+    <%= button_to "Delete Category", category_path(category), method: :delete %>
 <% end %>
+<div> 
+    <%= button_to "Create new category", new_category_path, method: :get %>
+</div>
+</div>

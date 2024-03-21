@@ -8,6 +8,13 @@
         <p><strong>Body:</strong></p>
         <%= @post.body%>
     </div>
+
+    <div>
+        <% if @post.category_id.present?%>
+            <p><strong>Category:</strong></p>
+            <%= @post.category.title%>
+        <% end %>
+    </div>
     <div>
         <% if @post.image.attached? %>
             <p><strong>Attached Image:</strong></p>
